@@ -1,0 +1,10 @@
+<h2>{{ puzzle.title }}</h2>
+<p>{{ puzzle.question }}</p>
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="answer" required />
+    <button type="submit">정답 제출</button>
+</form>
+{% if puzzle.hint %}
+    <p>힌트: {{ puzzle.hint }}</p>
+{% endif %}
